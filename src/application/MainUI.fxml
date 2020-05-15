@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="876.0" prefWidth="1292.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UIController">
+   <children>
+      <Pane layoutX="6.0" layoutY="8.0" prefHeight="856.0" prefWidth="288.0" style="-fx-background-color: #cff;">
+         <children>
+            <TextField id="chartTF" fx:id="chartTF" layoutX="29.0" layoutY="46.0" onMouseClicked="#chartChoose" prefHeight="35.0" prefWidth="227.0" />
+            <ChoiceBox id="chartColCB" fx:id="chartColCB" layoutX="29.0" layoutY="134.0" prefHeight="35.0" prefWidth="227.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></ChoiceBox>
+            <ListView id="chartList" fx:id="chartList" layoutX="29.0" layoutY="188.0" prefHeight="649.0" prefWidth="227.0" />
+            <Label layoutX="29.0" layoutY="14.0" prefHeight="28.0" prefWidth="123.0" text="表格/文本路径选择" />
+            <Label layoutX="29.0" layoutY="104.0" text="表格列选择（仅Excel有效）" />
+         </children>
+      </Pane>
+      <Pane layoutX="298.0" layoutY="7.0" prefHeight="838.0" prefWidth="803.0" style="-fx-background-color: #9cf;">
+         <children>
+            <Pane layoutX="14.0" layoutY="13.0" prefHeight="813.0" prefWidth="296.0">
+               <children>
+                  <TextField id="FilePathTF" fx:id="FilePathTF" layoutX="21.0" layoutY="70.0" onMouseClicked="#chooseFolder" prefHeight="35.0" prefWidth="249.0" />
+                  <ListView id="FileListView" fx:id="FileListView" layoutX="21.0" layoutY="125.0" prefHeight="676.0" prefWidth="249.0" />
+                  <Label layoutX="21.0" layoutY="33.0" text="需重命名的文件夹选择" />
+               </children>
+            </Pane>
+            <Pane layoutX="319.0" layoutY="16.0" prefHeight="813.0" prefWidth="470.0">
+               <children>
+                  <WebView id="FilePreview" fx:id="FilePreview" layoutX="8.0" layoutY="51.0" prefHeight="750.0" prefWidth="453.0" />
+                  <Label layoutX="22.0" layoutY="23.0" text="文件预览界面" />
+               </children>
+            </Pane>
+         </children></Pane>
+      <Pane layoutX="1113.0" layoutY="11.0" prefHeight="838.0" prefWidth="159.0" style="-fx-background-color: ffffcc;">
+         <children>
+            <Button id="submitB" fx:id="submitB" layoutX="22.0" layoutY="222.0" mnemonicParsing="false" onAction="#submit" prefHeight="35.0" prefWidth="113.0" text="确认" />
+            <TextField id="PrefexTF" fx:id="PrefexTF" layoutX="11.0" layoutY="160.0" prefHeight="35.0" prefWidth="134.0" />
+            <ChoiceBox id="TypeCB" fx:id="TypeCB" layoutX="13.0" layoutY="35.0" prefHeight="35.0" prefWidth="134.0" />
+         	<Text Text="tips:" layoutX="13.0" layoutY="300">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font></Text>
+             <Text Text="1. 文件名来源可以是Excel文件（xlsx、xls、csv）,txt文档（按行分割）" layoutX="13.0" layoutY="340" wrappingWidth="130.0">
+	               <font>
+	                  <Font name="System Bold" size="14.0" />
+	               </font></Text>
+              <Text Text="2. Excel表格中尽量不要合并单元格，程序会按列读取，首行会作为表头来填充choiceBox，所以首行请一定不要有重复值！！！" layoutX="13.0" layoutY="430" wrappingWidth="130.0">
+	               <font>
+	                  <Font name="System Bold" size="14.0" />
+	               </font></Text>
+              <Text Text="3. 命名可选全部重命名，前后缀模式，其中分割符将会连接原文件名与新的文件名" layoutX="13.0" layoutY="570" wrappingWidth="130.0">
+	               <font>
+	                  <Font name="System Bold" size="14.0" />
+	               </font></Text>
+	          <Text Text="本软件由MichaelWang业余开发，免费使用，请勿商用。作者邮箱 mw530@foxmail.com" layoutX="13.0" layoutY="690" wrappingWidth="130.0">
+	               <font>
+	                  <Font name="System Bold" size="14.0" />
+	               </font></Text>
+            <Label layoutX="19.0" layoutY="95.0" prefHeight="53.0" prefWidth="123.0" text="间隔符输入（不要包含特殊字符，如/ ， .等）" wrapText="true" />
+         </children></Pane>
+   </children>
+</Pane>
